@@ -23,7 +23,8 @@ public class BankingApp {
             System.out.println("1. Deposit");
             System.out.println("2. Withdraw");
             System.out.println("3. Balance Inquiry");
-            System.out.println("4. Exit");
+            System.out.println("4. Show Transaction History");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
 
             try {
@@ -43,11 +44,15 @@ public class BankingApp {
                         showBalance();
                         break;
 
-                    case 4: 
+                    case 4:
+                        showTransactionHistory();
+                        break;
+
+                    case 5: 
                         option = false;
                         System.out.println("Thank you for using our banking application");
                         break;
-                        
+
                     default:
                     System.out.println("Invalid choice. Please select between 1-4.");
                 }
@@ -97,6 +102,10 @@ public class BankingApp {
 
     public void showBalance(){
         System.out.printf("Current Balance: %.2f%n", account.getBalance());
+    }
+
+    public void showTransactionHistory(){
+        account.showTransactionHistory();
     }
     
 }
